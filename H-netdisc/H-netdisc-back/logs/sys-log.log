@@ -1,0 +1,39 @@
+2023-12-18 23:43:22.318 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarting,55] - Starting HNetdiscBackApplication using Java 17.0.9 on DESKTOP-VP0S2IP with PID 9880 (D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back\target\classes started by HAM in D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back)
+2023-12-18 23:43:22.320 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStartupProfileInfo,635] - No active profile set, falling back to default profiles: default
+2023-12-18 23:43:22.790 [main] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider - [doScan,166] - No MyBatis mapper was found in '[com.hbx.project.hnetdiscback]' package. Please check your configuration.
+2023-12-18 23:43:23.358 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:43:23.358 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2023-12-18 23:43:23.358 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-12-18 23:43:23.415 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2023-12-18 23:43:24.013 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:43:24.038 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarted,61] - Started HNetdiscBackApplication in 2.216 seconds (JVM running for 3.194)
+2023-12-18 23:43:38.183 [http-nio-7090-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-18 23:46:33.321 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarting,55] - Starting HNetdiscBackApplication using Java 17.0.9 on DESKTOP-VP0S2IP with PID 17708 (D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back\target\classes started by HAM in D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back)
+2023-12-18 23:46:33.322 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStartupProfileInfo,635] - No active profile set, falling back to default profiles: default
+2023-12-18 23:46:33.812 [main] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider - [doScan,166] - No MyBatis mapper was found in '[com.hbx.project.hnetdiscback]' package. Please check your configuration.
+2023-12-18 23:46:34.438 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:46:34.438 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2023-12-18 23:46:34.438 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-12-18 23:46:34.499 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2023-12-18 23:46:35.162 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:46:35.185 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarted,61] - Started HNetdiscBackApplication in 2.39 seconds (JVM running for 3.351)
+2023-12-18 23:46:51.411 [http-nio-7090-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-18 23:50:19.175 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarting,55] - Starting HNetdiscBackApplication using Java 17.0.9 on DESKTOP-VP0S2IP with PID 6124 (D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back\target\classes started by HAM in D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back)
+2023-12-18 23:50:19.177 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStartupProfileInfo,635] - No active profile set, falling back to default profiles: default
+2023-12-18 23:50:19.655 [main] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider - [doScan,166] - No MyBatis mapper was found in '[com.hbx.project.hnetdiscback]' package. Please check your configuration.
+2023-12-18 23:50:20.224 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:50:20.225 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2023-12-18 23:50:20.225 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-12-18 23:50:20.281 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2023-12-18 23:50:20.865 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:50:20.891 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarted,61] - Started HNetdiscBackApplication in 2.204 seconds (JVM running for 3.181)
+2023-12-18 23:50:31.496 [http-nio-7090-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-18 23:50:57.013 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarting,55] - Starting HNetdiscBackApplication using Java 17.0.9 on DESKTOP-VP0S2IP with PID 20164 (D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back\target\classes started by HAM in D:\D\Project-Workshop\Java\java-components-skill\H-netdisc\H-netdisc-back)
+2023-12-18 23:50:57.015 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStartupProfileInfo,635] - No active profile set, falling back to default profiles: default
+2023-12-18 23:50:57.511 [main] WARN  o.s.c.a.ClassPathScanningCandidateComponentProvider - [doScan,166] - No MyBatis mapper was found in '[com.hbx.project.hnetdiscback]' package. Please check your configuration.
+2023-12-18 23:50:58.084 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:50:58.084 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+2023-12-18 23:50:58.085 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-12-18 23:50:58.136 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+2023-12-18 23:50:58.772 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-7090"]
+2023-12-18 23:50:58.796 [main] INFO  c.h.p.h.HNetdiscBackApplication - [logStarted,61] - Started HNetdiscBackApplication in 2.268 seconds (JVM running for 3.201)
