@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hbx.project.hnetdiscback.mapper.UserInfoMapper">
+
+    <select id="queryCountByEmail" resultType="Integer">
+        select count(1)
+        from user_info
+        where email = #{email,jdbcType=VARCHAR}
+    </select>
+
+    <insert id="insert" parameterType="com.hbx.project.hnetdiscback.entity.pojo.UserInfoDO">
+        INSERT INTO
+        user_info(user_id,nick_name,email,qq_open_id,qq_avatar,password,join_time,last_login_time,status,use_space,total_space,admin)
+        VALUES
+        (
+            #{userId,jdbcType=VARCHAR},
+            #{nickName,jdbcType=VARCHAR},
+            #{email,jdbcType=VARCHAR},
+            #{qqOpenId,jdbcType=VARCHAR},
+            #{qqAvatar,jdbcType=VARCHAR},
+            #{password,jdbcType=VARCHAR},
+            #{joinTime,jdbcType=VARCHAR},
+            #{lastLoginTime,jdbcType=VARCHAR},
+            #{status,jdbcType=VARCHAR},
+            #{useSpace,jdbcType=VARCHAR},
+            #{totalSpace,jdbcType=VARCHAR},
+            #{admin,jdbcType=VARCHAR}
+        )
+    </insert>
+</mapper>
