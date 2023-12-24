@@ -1,17 +1,10 @@
 package com.hbx.project.hnetdiscback.controller;
 
-import com.hbx.project.hnetdiscback.entity.constant.ApplicationConstant;
-import com.hbx.project.hnetdiscback.entity.vo.AopResponse;
-import com.hbx.project.hnetdiscback.entity.vo.EmailCodeRequestVO;
-import com.hbx.project.hnetdiscback.entity.vo.RegisterRequestVO;
+import com.hbx.project.hnetdiscback.entity.vo.*;
 import com.hbx.project.hnetdiscback.service.LoginService;
-import com.wf.captcha.SpecCaptcha;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.concurrent.TimeUnit;
 
 
 @RestController
@@ -46,5 +39,10 @@ public class LoginController {
     @PostMapping("/register")
     public AopResponse<Object> register(@RequestBody RegisterRequestVO requestVO) throws Exception {
         return loginService.register(requestVO);
+    }
+
+    @PostMapping("login")
+    public AopResponse<UserInfoVO> login(@RequestBody LoginRequestVO requestVo) throws Exception {
+        return loginService.login(requestVo);
     }
 }

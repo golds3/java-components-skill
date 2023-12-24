@@ -10,4 +10,6 @@ public interface UserInfoMapper {
     Integer queryCountByEmail(@Param("email") String email);
 
     Integer insert(UserInfoDO userInfoDO);
+
+    UserInfoDO queryInfoByEmail(@Param("email") String email);
 }

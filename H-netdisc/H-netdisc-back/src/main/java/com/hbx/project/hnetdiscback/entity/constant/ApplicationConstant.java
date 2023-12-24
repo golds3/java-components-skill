@@ -23,4 +23,8 @@ public class ApplicationConstant {
      * 初始用户网盘空间
      */
     public static String USER_INIT_SPACE = "1TB";
+
+    public static String USER_DISABLE_STATUS = "0";
+
+    public static String USER_ENABLE_STATUS = "1";
 }

@@ -2,9 +2,7 @@ package com.hbx.project.hnetdiscback.service.impl;
 
 import com.hbx.project.hnetdiscback.entity.constant.ApplicationConstant;
 import com.hbx.project.hnetdiscback.entity.pojo.UserInfoDO;
-import com.hbx.project.hnetdiscback.entity.vo.AopResponse;
-import com.hbx.project.hnetdiscback.entity.vo.EmailCodeRequestVO;
-import com.hbx.project.hnetdiscback.entity.vo.RegisterRequestVO;
+import com.hbx.project.hnetdiscback.entity.vo.*;
 import com.hbx.project.hnetdiscback.mapper.UserInfoMapper;
 import com.hbx.project.hnetdiscback.service.LoginService;
 import com.hbx.project.hnetdiscback.utils.EmailUtils;
@@ -15,15 +13,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -82,8 +78,39 @@ public class LoginServiceImpl implements LoginService {
         checkEmailCode(requestVO.getEmailCode(), requestVO.getEmail());
         //入库
         UserInfoDO userInfoDO = buildUserInfo(requestVO);
-        Integer i =  userInfoMapper.insert(userInfoDO);
+        Integer i = userInfoMapper.insert(userInfoDO);
         return new AopResponse<>().success();
+    }
+
+    @Override
+    public AopResponse<UserInfoVO> login(LoginRequestVO requestVo) throws Exception {
+        //校验验证码
+        checkCaptcha(requestVo.getCheckCode(), requestVo.getImages());
+        UserInfoDO userInfoDO = userInfoMapper.queryInfoByEmail(requestVo.getEmail());
+        if (Objects.isNull(userInfoDO)) {
+            throw new Exception("邮箱未注册");
+        }
+        String password = DigestUtils.md5Hex(requestVo.getPassword());
+        if (!StringUtils.equals(userInfoDO.getPassword(), password)) {
+            throw new Exception("密码输入错误");
+        }
+        if (ApplicationConstant.USER_DISABLE_STATUS.equals(userInfoDO.getStatus())) {
+            throw new Exception("该用户已被禁用");
+        }
+        UserInfoVO userInfoVo = buildUserInfoVO(userInfoDO);
+        return new AopResponse<UserInfoVO>().success(userInfoVo) ;
+    }
+
+    private UserInfoVO buildUserInfoVO(UserInfoDO userInfoDO) {
+        UserInfoVO userInfoVO = new UserInfoVO();
+        userInfoVO.setAdmin(userInfoDO.getAdmin());
+        userInfoVO.setAvatar(userInfoDO.getQqAvatar());
+        userInfoVO.setUserId(userInfoDO.getUserId());
+        // TODO: 2023/12/24 查文件表封装已使用空间
+        userInfoVO.setUseSpace(userInfoDO.getUseSpace());
+        userInfoVO.setTotalSpace(userInfoDO.getTotalSpace());
+        userInfoVO.setNickName(userInfoDO.getNickName());
+        return userInfoVO;
     }
 
     private UserInfoDO buildUserInfo(RegisterRequestVO requestVO) {
