@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,7 +51,7 @@ public class LoginServiceImpl implements LoginService {
         //获取图形验证码中的验证码文本
         String verCode = specCaptcha.text().toLowerCase();
         //验证码+图片编码作为唯一标识，防止多次请求覆盖有效的验证码
-        redisTemplate.opsForValue().set(ApplicationConstant.REDIS_BASEKEY_CAPTCHA + ":" + images, verCode, 5, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set(ApplicationConstant.REDIS_BASEKEY_CAPTCHA, verCode, 5, TimeUnit.MINUTES);
         return new AopResponse<String>().success(images);
     }
 
@@ -128,7 +129,7 @@ public class LoginServiceImpl implements LoginService {
     }
 
     private void checkEmailCode(String emailCode, String email) throws Exception {
-        String ordCheckCode = redisTemplate.opsForValue().get(ApplicationConstant.REDIS_BASEKEY_CAPTCHA + ":" + email);
+        String ordCheckCode = redisTemplate.opsForValue().get(ApplicationConstant.REDIS_BASEKEY_VERCODE + ":" + email);
         if (ordCheckCode == null) {
             throw new Exception("邮箱验证码已过期，请刷新");
         } else if (!StringUtils.equals(emailCode, ordCheckCode)) {
@@ -138,8 +139,6 @@ public class LoginServiceImpl implements LoginService {
 
     private void sendEmail(String verCode, String email) {
         String context = "您的验证码是 " + verCode + " 验证码1分钟内有效,请谨慎保管";
-//        // TODO: 2023/12/21 优化使用多线程的方法
-//        taskExecutor.execute(()->{
         EmailUtils.sendEmailTextContext(context, email);
         //保存验证码
         redisTemplate.opsForValue().set(ApplicationConstant.REDIS_BASEKEY_VERCODE + ":" + email, verCode, 1, TimeUnit.MINUTES);
@@ -148,10 +147,10 @@ public class LoginServiceImpl implements LoginService {
 
 
     private void checkCaptcha(String checkCode, String images) throws Exception {
-        String ordCheckCode = redisTemplate.opsForValue().get(ApplicationConstant.REDIS_BASEKEY_CAPTCHA + ":" + images);
+        String ordCheckCode = redisTemplate.opsForValue().get(ApplicationConstant.REDIS_BASEKEY_CAPTCHA);
         if (ordCheckCode == null) {
             throw new Exception("图形验证码已过期，请刷新");
-        } else if (!StringUtils.equals(checkCode, ordCheckCode)) {
+        } else if (!StringUtils.equals(checkCode.toLowerCase(), ordCheckCode)) {
             throw new Exception("图形验证码输入错误");
         }
     }

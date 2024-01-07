@@ -54,7 +54,7 @@ public class AopResponse<T> implements Serializable {
      * @return
      */public AopResponse<T> fail(String msg){
         AopResponse<T> response = new AopResponse<>();
-        response.setCode("600");
+        response.setCode("999");
         response.setMsg(msg);
         return response;
     }
