@@ -1,0 +1,17 @@
+spring:
+#  邮件配置
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: your-email@example.com
+    password: your-password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+sendgrid:
+  api:
+    key: test
