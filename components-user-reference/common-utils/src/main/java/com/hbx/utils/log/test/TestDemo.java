@@ -12,5 +12,6 @@ public class TestDemo {
         log.info(msg, "info");
         log.warn(msg, "warn");
         log.error(msg, "error");
+        log.info("12");//测试脱敏
     }
 }

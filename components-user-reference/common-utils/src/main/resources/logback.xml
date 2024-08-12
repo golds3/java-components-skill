@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <conversionRule conversionWord="msg" converterClass="com.hbx.utils.log.configuration.SensitiveConverter"> </conversionRule>
     <!--自定义颜色配置-->
     <conversionRule conversionWord="customcolor" converterClass="com.hbx.utils.log.configuration.LogbackColorful"/>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
