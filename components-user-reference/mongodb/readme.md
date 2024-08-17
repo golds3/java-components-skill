@@ -19,3 +19,12 @@ Mongo server版本 7.x
     </dependency>
     </dependencies>
 ```
+
+配置文件
+```properties
+spring.data.mongodb.uri=mongodb://ip:port/dbname
+# 如果有用户
+#spring.data.mongodb.uri=mongodb://user:pawd@ip:port/dbname
+#如果是集群：
+#spring.data.mongodb.uri=mongodb://user:pwd@ip1:port1,ip2:port2/dbname
+```
