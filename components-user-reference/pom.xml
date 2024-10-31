@@ -18,6 +18,7 @@
         <module>rockermq</module>
         <module>apollo-springboot2</module>
         <module>common-utils</module>
+        <module>mybatis3</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
