@@ -1,0 +1,2 @@
+常见的缓存数据库等客户端在Spring 中的使用案例
+如Redis、Memcached、caffeine等

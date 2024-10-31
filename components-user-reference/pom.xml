@@ -20,6 +20,7 @@
         <module>common-utils</module>
         <module>mongodb</module>
         <module>mybatis3</module>
+        <module>cache</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
