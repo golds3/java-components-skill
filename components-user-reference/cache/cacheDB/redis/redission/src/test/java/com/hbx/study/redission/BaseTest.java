@@ -15,15 +15,11 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest(classes = MyRedission.class)
 //@ActiveProfiles("test")
 public class BaseTest {
-//    @Autowired
-//    private InsertCase insertCase;
+    @Autowired
+    private InsertCase insertCase;
     @Test
     public void testInsertKV(){
-//        insertCase.insertKV("test","hh");
-        Config config = new Config();
-        config.useSingleServer()
-                .setAddress("redis://localhost:6379").setPassword("root");
-        RedissonClient redisson = Redisson.create(config);
+        insertCase.insertKV("test","hh");
 
     }
 }
