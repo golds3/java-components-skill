@@ -1,5 +1,7 @@
 package com.hbx.study.redission;
 
+import com.hbx.study.redission.learn.BaseService;
+import com.hbx.study.redission.learn.BucketTypeOperate;
 import com.hbx.study.redission.learn.InsertCase;
 import com.hbx.study.redission.learn.KeyOperate;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest(classes = MyRedission.class)
@@ -25,8 +28,7 @@ public class BaseTest {
     private RedissonClient redissonClient;
     @Test
     public void testInsertKV(){
-        insertCase.insertKV("teste","hhxx");
-        RBucket<Object> bucket = redissonClient.getBucket("test2");
+        RBucket<Object> bucket = redissonClient.getBucket("buck2");
         Object o = bucket.get();
         System.out.println(o);
 
@@ -43,6 +45,14 @@ public class BaseTest {
     @Test
     public void testDeleteKey(){
         keyOperate.deleteKey("test2");
+    }
+
+
+    @Autowired
+    private BucketTypeOperate bucketTypeOperate;
+    @Test
+    public void kvSet(){
+        bucketTypeOperate.KVSet("buck2", Arrays.asList("1",2,3.0));
     }
 
 }
