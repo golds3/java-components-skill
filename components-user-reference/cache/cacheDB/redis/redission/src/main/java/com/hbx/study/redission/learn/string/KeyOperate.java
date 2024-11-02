@@ -1,8 +1,7 @@
-package com.hbx.study.redission.learn;
+package com.hbx.study.redission.learn.string;
 
+import com.hbx.study.redission.learn.BaseService;
 import org.redisson.api.RKeys;
-import org.redisson.api.RedissonClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ import java.util.List;
  *
  */
 @Service
-public class KeyOperate extends BaseService{
+public class KeyOperate extends BaseService {
 
     /**
      * 获取当前数据库所有的keys
