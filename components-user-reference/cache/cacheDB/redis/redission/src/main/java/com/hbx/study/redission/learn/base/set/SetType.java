@@ -1,4 +1,4 @@
-package com.hbx.study.redission.learn.set;
+package com.hbx.study.redission.learn.base.set;
 
 import com.hbx.study.redission.learn.BaseService;
 import org.redisson.api.RSet;

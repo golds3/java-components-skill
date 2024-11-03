@@ -1,11 +1,11 @@
 package com.hbx.study.redission;
 
-import com.hbx.study.redission.learn.hash.HashType;
-import com.hbx.study.redission.learn.set.SetType;
-import com.hbx.study.redission.learn.string.BloomFilter;
-import com.hbx.study.redission.learn.string.BucketTypeOperate;
-import com.hbx.study.redission.learn.string.KeyOperate;
-import com.hbx.study.redission.learn.string.RateLimeter;
+import com.hbx.study.redission.learn.base.hash.HashType;
+import com.hbx.study.redission.learn.base.set.SetType;
+import com.hbx.study.redission.learn.base.string.BloomFilter;
+import com.hbx.study.redission.learn.base.string.BucketTypeOperate;
+import com.hbx.study.redission.learn.base.string.KeyOperate;
+import com.hbx.study.redission.learn.base.string.RateLimeter;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RBucket;
@@ -15,7 +15,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 @SpringBootTest(classes = MyRedission.class)

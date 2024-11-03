@@ -1,4 +1,4 @@
-package com.hbx.study.redission.learn.hash;
+package com.hbx.study.redission.learn.base.hash;
 
 import com.hbx.study.redission.learn.BaseService;
 import org.redisson.api.RMap;

@@ -5,15 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.hbx.study</groupId>
-        <artifactId>cache</artifactId>
+        <artifactId>frameWork</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>frameWork</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>jetChache</module>
-    </modules>
+    <artifactId>jetChache</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

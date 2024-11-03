@@ -1,4 +1,4 @@
-package com.hbx.study.redission.learn.list;
+package com.hbx.study.redission.learn.base.list;
 
 import com.hbx.study.redission.learn.BaseService;
 

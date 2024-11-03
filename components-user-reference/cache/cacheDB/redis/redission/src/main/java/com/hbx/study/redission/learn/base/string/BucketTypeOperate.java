@@ -1,4 +1,4 @@
-package com.hbx.study.redission.learn.string;
+package com.hbx.study.redission.learn.base.string;
 
 import com.hbx.study.redission.learn.BaseService;
 import org.redisson.api.RBucket;
