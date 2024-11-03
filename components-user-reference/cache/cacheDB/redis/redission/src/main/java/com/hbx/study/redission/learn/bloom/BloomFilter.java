@@ -1,4 +1,4 @@
-package com.hbx.study.redission.learn.base.string;
+package com.hbx.study.redission.learn.bloom;
 
 import com.hbx.study.redission.learn.BaseService;
 import org.redisson.api.RBloomFilter;
@@ -16,10 +16,12 @@ public class BloomFilter extends BaseService {
      * @return
      * @param <T>value的类型
      */
-    public  <T>RBloomFilter<T> getBloomFilter(String key,long expectedInsertions, double falseProbability){
+    public  <T>RBloomFilter<T> getBloomFilter(String key,Long expectedInsertions, Float falseProbability){
         RBloomFilter<T> bloomFilter = redissonClient.getBloomFilter(key);
+        if (expectedInsertions!=null&&falseProbability!=null){
+            bloomFilter.tryInit(expectedInsertions,falseProbability);
+        }
         //初始化配置参数
-        bloomFilter.tryInit(expectedInsertions,falseProbability);
         return bloomFilter;
     }
 }

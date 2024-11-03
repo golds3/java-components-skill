@@ -2,7 +2,7 @@ package com.hbx.study.redission;
 
 import com.hbx.study.redission.learn.base.hash.HashType;
 import com.hbx.study.redission.learn.base.set.SetType;
-import com.hbx.study.redission.learn.base.string.BloomFilter;
+import com.hbx.study.redission.learn.bloom.BloomFilter;
 import com.hbx.study.redission.learn.base.string.BucketTypeOperate;
 import com.hbx.study.redission.learn.base.string.KeyOperate;
 import com.hbx.study.redission.learn.base.string.RateLimeter;
@@ -54,7 +54,7 @@ public class BaseTest {
     private BloomFilter bloomFilter;
     @Test
     public void testBloom(){
-        RBloomFilter<String> test = bloomFilter.getBloomFilter("test", 255000000L, 0.03);
+        RBloomFilter<String> test = bloomFilter.getBloomFilter("testaaa", 35500000L, 0.08f);
         test.add("aa1");
         if (test.contains("aa")){
             System.out.println("aa命中");
