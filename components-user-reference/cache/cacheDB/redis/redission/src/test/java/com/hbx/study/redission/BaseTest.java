@@ -6,12 +6,10 @@ import com.hbx.study.redission.learn.bloom.BloomFilter;
 import com.hbx.study.redission.learn.base.string.BucketTypeOperate;
 import com.hbx.study.redission.learn.base.string.KeyOperate;
 import com.hbx.study.redission.learn.base.string.RateLimeter;
+import com.hbx.study.redission.learn.lock.CountDownLatchService;
 import com.hbx.study.redission.learn.lua.LuaService;
 import org.junit.jupiter.api.Test;
-import org.redisson.api.RBloomFilter;
-import org.redisson.api.RBucket;
-import org.redisson.api.RScript;
-import org.redisson.api.RedissonClient;
+import org.redisson.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
@@ -123,9 +121,29 @@ public class BaseTest {
         System.out.println(o);
 
         script = """
-                return redis.call('GET',KEYS[1])
+                --[[
+                if redis.call('GET',KEYS[1])==2
+                then
+                return redis.error_reply('OPERATION_ALREADY_EXECUTED')
+                end
+                ]]
+                return redis.error_reply('KEY_NOT_FOUND')
                 """;
-        Object  o1 = luaService.luaRead(script, RScript.ReturnType.MULTI, Arrays.asList("lua"));
+        Object o1 = luaService.luaRead(script, RScript.ReturnType.MULTI, Arrays.asList("lua"));
         System.out.println(o1.getClass());
     }
+
+
+    @Autowired
+    private CountDownLatchService countDownLatchService;
+
+    @Test
+    public void testCountDown() throws InterruptedException {
+        countDownLatchService.lock("down");
+//        RCountDownLatch countDownLatch2 = redissonClient.getCountDownLatch("down");
+//        System.out.println("count--");
+//        countDownLatch2.countDown(); //计数器减一 ，如果变为零，通知所有的线程
+    }
+
+
 }
