@@ -1,4 +1,4 @@
-package com.hbx.study.redission.learn.base.string;
+package com.hbx.study.redission.learn.lock;
 
 import com.hbx.study.redission.learn.BaseService;
 import org.redisson.api.RRateLimiter;

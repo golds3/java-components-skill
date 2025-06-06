@@ -5,7 +5,7 @@ import com.hbx.study.redission.learn.base.set.SetType;
 import com.hbx.study.redission.learn.bloom.BloomFilter;
 import com.hbx.study.redission.learn.base.string.BucketTypeOperate;
 import com.hbx.study.redission.learn.base.string.KeyOperate;
-import com.hbx.study.redission.learn.base.string.RateLimeter;
+import com.hbx.study.redission.learn.lock.RateLimeter;
 import com.hbx.study.redission.learn.lock.CountDownLatchService;
 import com.hbx.study.redission.learn.lua.LuaService;
 import org.junit.jupiter.api.Test;
