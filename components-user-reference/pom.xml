@@ -21,8 +21,8 @@
         <module>mongodb</module>
         <module>mybatis3</module>
         <module>cache</module>
-        <module>sence</module>
         <module>se</module>
+        <module>spring</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
