@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hbx.study.mybatis3.mapper.AIMapper">
+    <resultMap id="signInf" type="com.hbx.study.mybatis3.pojo.SignInf">
+        <id property="id" column="id"/>
+        <result property="acctNo" column="acct_no"/>
+        <result property="regType" column="reg_type"/>
+        <result property="emailFlag" column="email_flag"/>
+        <result property="billRegType" column="bill_reg_type"/>
+    </resultMap>
+    <select id="getSignInf" resultMap="signInf" >
+        SELECT *
+        FROM sign_inf
+        <!-- 可根据实际表结构调整 -->
+    </select>
+</mapper>
