@@ -15,7 +15,7 @@
     <name>components-user-reference</name>
     <description>components-user-reference</description>
     <modules>
-        <module>rockermq</module>
+        <module>rocketmq</module>
         <module>apollo-springboot2</module>
         <module>common-utils</module>
         <module>mongodb</module>
@@ -23,6 +23,7 @@
         <module>cache</module>
         <module>se</module>
         <module>spring</module>
+        <module>rocketmq</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

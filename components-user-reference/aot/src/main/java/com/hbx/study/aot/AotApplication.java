@@ -1,11 +1,13 @@
-package com.hbx.study;
+package com.hbx.study.aot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RMQApplicationClent {
+public class AotApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(RMQApplicationClent.class,args);
+        SpringApplication.run(AotApplication.class, args);
     }
+
 }
